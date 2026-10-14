@@ -115,6 +115,13 @@ form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:has(input:fo
   outline-offset: 2px;
 }
 
+/* Backup: always show the tier field that matches the selected frequency,
+   even if JotForm's conditions haven't revealed it yet */
+form[name=form_6926340]:not(#_):not(#_):has(#input_93_0:checked) li#id_95,
+form[name=form_6926340]:not(#_):not(#_):has(#input_93_1:checked) li#id_96 {
+  display: flex !important;
+}
+
 /* ---------- Billing frequency: Monthly [switch] Annually (93) ---------- */
 form[name=form_6926340]:not(#_):not(#_) li#id_93 {
   align-items: center;

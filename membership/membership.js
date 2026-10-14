@@ -92,6 +92,18 @@
       syncSwitch();
     }
 
+    /* 2b. On load, tell JotForm's conditions which option is selected so the
+           matching tier field (95 Monthly / 96 Annually) is shown. Monthly can
+           arrive pre-checked without a change event, leaving both fields hidden.
+           Re-run after the page finishes loading in case the conditions attach late. */
+    function announceFrequency() {
+      if (!monthlyRadio || !annualRadio) return;
+      var active = annualRadio.checked ? annualRadio : monthlyRadio;
+      if (!active.checked) active.click();
+      fire(active, 'click');
+      fire(active, 'change');
+    }
+
     /* 3. Tier cards (95 / 96): split each option into name / price / note.
           "Partner $540/mo ($540 x 12 = $6,480 billed yearly)" →
           PARTNER / $540/mo / $540 <small ×> 12 = <b>$6,480</b> billed yearly */
@@ -194,6 +206,10 @@
       });
       if (freq[f].checked) syncRecurring(freq[f].value === 'Monthly');
     }
+
+    announceFrequency();
+    window.addEventListener('load', function () { setTimeout(announceFrequency, 300); });
+    setTimeout(announceFrequency, 1500);
 
     return true;
   }
