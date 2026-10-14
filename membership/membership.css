@@ -1,0 +1,392 @@
+/* membership form */
+
+/* ---------------------------------------------------------
+   COLORS — swap these placeholders for the site's real values
+   (the ones your SCSS $primary-color, $accent-color, etc. use)
+   --------------------------------------------------------- */
+form[name='form_6926340']:not(#_):not(#_) {
+  --primary-color: #317cb8;        /* $primary-color */
+  --accent-color: #317cb8;         /* $accent-color */
+  --secondary-color-alt: #000;  /* $secondary-color-alt */
+  --light-color: #F7F5EF;          /* $light-color */
+}
+
+/* =========================================================
+   Membership 2026 — form 6926340
+   Full-width card + billing tabs (93) + tier cards (95 / 96)
+   ========================================================= */
+/* ---------- Form card (full width, no split) ---------- */
+form[name=form_6926340]:not(#_):not(#_) .form-line {
+  border-bottom: none;
+}
+
+form[name=form_6926340]:not(#_):not(#_) .custom-form-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: fit-content;
+  margin-top: 40px;
+  padding: 25px 35px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1019607843);
+  background: var(--light-color);
+}
+
+/* Uncomment if the generic chabad.org logo (field 97) shouldn't show */
+/* form[name='form_6926340']:not(#_):not(#_) li#id_97 { display: none; } */
+/* ---------- Shared: tabs + tier fields ---------- */
+form[name=form_6926340]:not(#_):not(#_) li#id_93,
+form[name=form_6926340]:not(#_):not(#_) li#id_95,
+form[name=form_6926340]:not(#_):not(#_) li#id_96 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 0 12px;
+    max-width: 650px;
+}
+
+form[name=form_6926340]:not(#_):not(#_) div#label_93,
+form[name=form_6926340]:not(#_):not(#_) div#label_95,
+form[name=form_6926340]:not(#_):not(#_) div#label_96 {
+  display: none;
+}
+
+form[name=form_6926340]:not(#_):not(#_) div#cid_93,
+form[name=form_6926340]:not(#_):not(#_) div#cid_95,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 {
+  display: block;
+  float: none;
+  width: 100%;
+  margin: 0;
+}
+
+form[name=form_6926340]:not(#_):not(#_) div#cid_93 .clearfix,
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .clearfix,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .clearfix,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 br {
+  display: none;
+}
+
+/* Hide native radios visually but keep them keyboard-accessible */
+form[name=form_6926340]:not(#_):not(#_) div#cid_93 input[type=radio],
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 input[type=radio],
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  pointer-events: none;
+}
+
+/* Card look (inspo shadow + primary fill on hover / checked) */
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  margin: 0;
+  padding: 0 !important;
+  border: 0;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--secondary-color-alt);
+  font-size: 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item *,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item * {
+  cursor: pointer;
+}
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item:hover,
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item:has(input:checked),
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:hover,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:has(input:checked) {
+  background: var(--primary-color);
+  color: #fff;
+}
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item:has(input:focus-visible),
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:has(input:focus-visible) {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* ---------- Billing frequency: Monthly [switch] Annually (93) ---------- */
+form[name=form_6926340]:not(#_):not(#_) li#id_93 {
+  align-items: center;
+}
+form[name=form_6926340]:not(#_):not(#_) div#cid_93 {
+  display: flex;
+  justify-content: center;
+}
+form[name=form_6926340]:not(#_):not(#_) div#cid_93 .form-multiple-column {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  width: auto;
+  padding: 12px 22px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: rgba(99, 99, 99, 0.12) 0px 2px 10px 0px;
+}
+form[name=form_6926340]:not(#_):not(#_) div#cid_93 .form-radio-item {
+  width: auto;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0 !important;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+form[name=form_6926340]:not(#_):not(#_) div#cid_93 .form-radio-item:has(#input_93_0) { order: 1; }
+form[name=form_6926340]:not(#_):not(#_) div#cid_93 .freq-switch { order: 2; }
+form[name=form_6926340]:not(#_):not(#_) div#cid_93 .form-radio-item:has(#input_93_1) { order: 3; }
+form[name=form_6926340]:not(#_):not(#_) div#cid_93 .form-radio-item label {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #6b6b70;
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+form[name=form_6926340]:not(#_):not(#_) div#cid_93 .form-radio-item:hover label,
+form[name=form_6926340]:not(#_):not(#_) div#cid_93 .form-radio-item:has(input:checked) label {
+  color: var(--secondary-color-alt);
+  font-weight: 600;
+}
+
+/* The switch (added by JS between the two labels) */
+form[name=form_6926340]:not(#_):not(#_) div#cid_93 .freq-switch {
+  position: relative;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 26px;
+  border-radius: 999px;
+  background: #e6e8ee;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+form[name=form_6926340]:not(#_):not(#_) div#cid_93 .freq-switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+form[name=form_6926340]:not(#_):not(#_) div#cid_93:has(#input_93_1:checked) .freq-switch::after {
+  transform: translateX(22px);
+}
+form[name=form_6926340]:not(#_):not(#_) div#cid_93 .freq-switch:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+/* ---------- Tier cards (Monthly 95 / Annually 96) — stacked rows ---------- */
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-single-column,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-single-column {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item label,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item label {
+  width: 100%;
+  margin: 0;
+  padding: 14px 16px;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+/* Row layout: name + note on the left, price on the right */
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item label,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item label {
+  padding: 20px 24px;
+}
+form[name=form_6926340]:not(#_):not(#_) .tier {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "name  price"
+    "note  price";
+  align-items: center;
+  column-gap: 16px;
+  row-gap: 4px;
+}
+
+form[name=form_6926340]:not(#_):not(#_) .tier-name {
+  grid-area: name;
+  font-size: 17px;
+  color: var(--primary-color);
+font-weight:bold;
+}
+
+form[name=form_6926340]:not(#_):not(#_) .tier-price {
+  grid-area: price;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  line-height: 1;
+  white-space: nowrap;
+}
+form[name=form_6926340]:not(#_):not(#_) .tier-price b {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+form[name=form_6926340]:not(#_):not(#_) .tier-price small {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--secondary-color-alt);
+}
+
+form[name=form_6926340]:not(#_):not(#_) .tier-note {
+  grid-area: note;
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.3;
+  color: var(--secondary-color-alt);
+}
+
+/* Bold yearly total in the note ("= $6,480") */
+form[name=form_6926340]:not(#_):not(#_) .tier-note b {
+  font-weight: 700;
+}
+
+/* Smaller × in the note ("$540 × 12") */
+form[name=form_6926340]:not(#_):not(#_) .tier-times {
+  font-size: 0.8em;
+  margin: 0 1px;
+}
+
+/* Hover / checked: everything white */
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item:hover .tier *,
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item:has(input:checked) .tier *,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:hover .tier *,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:has(input:checked) .tier * {
+  color: #fff;
+}
+
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item:has(input:checked) .tier-name,
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item:has(input:checked) .tier-note,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:has(input:checked) .tier-name,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:has(input:checked) .tier-note {
+  opacity: 0.85;
+}
+
+/* "Other" amount (Monthly 95 / Annually 96): no card, the input is the field */
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item:has(.form-radio-other),
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:has(.form-radio-other),
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item:has(.form-radio-other):hover,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:has(.form-radio-other):hover,
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item:has(.form-radio-other):has(input:checked),
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:has(.form-radio-other):has(input:checked) {
+  grid-column: 1/-1;
+  align-items: center;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--primary-color);
+}
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item:has(.form-radio-other) > span,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:has(.form-radio-other) > span {
+  display: block;
+  width: 100%;
+}
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item:has(.form-radio-other) input.form-radio-other-input,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:has(.form-radio-other) input.form-radio-other-input {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+  color: var(--accent-color);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: text;
+}
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item:has(.form-radio-other) input.form-radio-other-input:disabled,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:has(.form-radio-other) input.form-radio-other-input:disabled {
+  pointer-events: none; /* lets the click reach the radio item */
+}
+/* Selected "Other": outline the input instead of filling a card */
+form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item:has(.form-radio-other:checked) input.form-radio-other-input,
+form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item:has(.form-radio-other:checked) input.form-radio-other-input {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 0;
+}
+/* ---------- Mobile ---------- */
+@media only screen and (max-width: 600px) {
+  form[name=form_6926340]:not(#_):not(#_) .custom-form-wrap {
+    padding: 15px 10px;
+  }
+  form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-single-column,
+  form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-single-column {
+    grid-template-columns: 1fr;
+  }
+  form[name=form_6926340]:not(#_):not(#_) div#cid_93 .form-multiple-column {
+    padding: 10px 16px;
+    gap: 10px;
+  }
+  form[name=form_6926340]:not(#_):not(#_) div#cid_95 .form-radio-item label,
+  form[name=form_6926340]:not(#_):not(#_) div#cid_96 .form-radio-item label {
+    padding: 16px 18px;
+  }
+  form[name=form_6926340]:not(#_):not(#_) .tier-price b {
+    font-size: 24px;
+  }
+}
+
+/* ---------- Pricing group: info (98 + 75) left, toggle + tiers right ---------- */
+form[name=form_6926340]:not(#_):not(#_) .pricing-split {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+form[name=form_6926340]:not(#_):not(#_) .pricing-info {
+  flex: 1 1 38%;
+  min-width: 0;
+}
+form[name=form_6926340]:not(#_):not(#_) .pricing-options {
+  flex: 1 1 29%;
+  min-width: 0;
+}
+form[name=form_6926340]:not(#_):not(#_) .pricing-info > li:first-child {
+  padding-top: 0;
+}
+form[name=form_6926340]:not(#_):not(#_) .pricing-options li#id_93,
+form[name=form_6926340]:not(#_):not(#_) .pricing-options li#id_95,
+form[name=form_6926340]:not(#_):not(#_) .pricing-options li#id_96 {
+  max-width: none;
+}
+@media only screen and (max-width: 900px) {
+  form[name=form_6926340]:not(#_):not(#_) .pricing-split {
+    flex-direction: column;
+    gap: 16px;
+  }
+  form[name=form_6926340]:not(#_):not(#_) .pricing-info,
+  form[name=form_6926340]:not(#_):not(#_) .pricing-options {
+    flex-basis: auto;
+    width: 100%;
+  }
+}
